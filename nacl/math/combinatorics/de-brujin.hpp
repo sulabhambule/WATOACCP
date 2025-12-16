@@ -18,5 +18,5 @@ int DeBruijn(int k, int n) {
   fill(aux, aux + k * n, 0);
   return sz = 0, Rec(1, 1, n, k), sz;
 
-  // dd 
+  // dd jflkjs fjlk jlk
 }
