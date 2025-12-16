@@ -17,4 +17,6 @@ int DeBruijn(int k, int n) {
   if (k == 1) return res[0] = 0, 1;
   fill(aux, aux + k * n, 0);
   return sz = 0, Rec(1, 1, n, k), sz;
+
+  // dd 
 }
