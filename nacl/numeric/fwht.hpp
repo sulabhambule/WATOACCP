@@ -1,4 +1,3 @@
-#include "../math/number-theory/modular.hpp"
 
 void fwht(vector<Mod> &a, bool inv) {
   int n = a.size();

@@ -1,4 +1,3 @@
-#include "../math/number-theory/modular.hpp"
 
 Mod det(vector<vector<Mod>> a) {
   int n = a.size();

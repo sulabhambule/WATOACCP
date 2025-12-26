@@ -1,4 +1,3 @@
-#include "../math/number-theory/modular.hpp"
 
 void ntt(vector<Mod> &a, bool inv, Mod primitive_root) {
   int n = a.size();

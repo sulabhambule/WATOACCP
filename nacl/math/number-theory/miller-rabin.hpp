@@ -1,4 +1,3 @@
-#include "modular.hpp"
 
 // checks if Mod::MOD is prime
 bool is_prime() {

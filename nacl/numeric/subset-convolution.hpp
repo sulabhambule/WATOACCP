@@ -1,4 +1,4 @@
-#include "../math/number-theory/modular.hpp"
+
 #pragma GCC target("popcnt")
 #include <immintrin.h> // keep-line
 

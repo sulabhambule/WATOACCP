@@ -1,4 +1,3 @@
-#include "modular.hpp"
 
 // returns x such that a ^ x = b where x \in [l, r)
 ll bsgs(Mod a, Mod b, ll l = 0, ll r = MOD - 1) {

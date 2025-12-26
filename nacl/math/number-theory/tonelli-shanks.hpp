@@ -1,4 +1,4 @@
-#include "modular.hpp"
+
 
 int legendre(Mod a) {
   if (a == 0) return 0;
