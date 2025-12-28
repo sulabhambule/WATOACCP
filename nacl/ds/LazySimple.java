@@ -1,30 +1,24 @@
-import java.util.*;
 public class LazySimple {
   private int n;
   private long[] st;
   private long[] lazy;
   public void init(int _n) {
-    this.n = _n;
-    st = new long[4 * n];
+    this.n = _n; st = new long[4 * n];
     lazy = new long[4 * n];
   }
-  private long combine(long a, long b) {
-    return a + b;
-  }
+  private long combine(long a, long b) { return a + b; }
   private void push(int start, int end, int node) {
     if (lazy[node] != 0) {
       st[node] += (end - start + 1) * lazy[node];
       if (start != end) {
         lazy[2 * node + 1] += lazy[node];
         lazy[2 * node + 2] += lazy[node];
-      }
-      lazy[node] = 0;
+      } lazy[node] = 0;
     }
   }
   private void build(int start,int end,int node,long[] v) {
-    if (start == end) {
+    if (start == end) 
       st[node] = v[start]; return;
-    }
     int mid = (start + end) / 2;
     build(start, mid, 2 * node + 1, v);
     build(mid + 1, end, 2 * node + 2, v);
@@ -44,22 +38,15 @@ public class LazySimple {
     push(sta, en, node);
     if (sta > r || en < l) return;
     if (sta >= l && en <= r) {
-      lazy[node] = val;
-      push(sta, en, node); return;
+      lazy[node] = val; push(sta, en, node); return;
     }
     int mid = (sta + en) / 2;
     update(sta, mid, 2 * node + 1, l, r, val);
     update(mid + 1, en, 2 * node + 2, l, r, val);
     st[node] = combine(st[2 * node + 1], st[2 * node + 2]);
   }
-  public void build(long[] v) {
-    build(0, n - 1, 0, v);
-  }
-  public long query(int l, int r) {
-    return query(0, n - 1, l, r, 0);
-  }
-  public void update(int l, int r, long x) {
-    update(0, n - 1, 0, l, r, x);
-  }
+  public void build(long[] v) { build(0, n - 1, 0, v); }
+  public long query(int l, int r) { return query(0, n - 1, l, r, 0); }
+  public void update(int l, int r, long x) { update(0, n - 1, 0, l, r, x);}
 }
 

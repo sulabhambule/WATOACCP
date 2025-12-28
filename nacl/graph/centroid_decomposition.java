@@ -9,19 +9,14 @@ public class centroid_decomposition {
       res += subtreeSize(next, node);
     }
     return (subSize[node] = res);
-  }
-  
-  // Find the centroid of the tree (the subtree with <= N/2 nodes)
+  } // Find the centroid of the tree (the subtree with <= N/2 nodes)
   public static int getCentroid(int node, int par) {
     for (int next : adj[node]) {
-      if (next == par) {
-        continue;
-      }
+      if (next == par) continue;
       // Keep searching for the centroid if there are subtrees with more
       // than N/2 nodes.
-      if (subSize[next] * 2 > N) {
+      if (subSize[next] * 2 > N) 
         return getCentroid(next, node);
-      }
     }
     return node;
   }

@@ -29,29 +29,33 @@
     \XeTeXlinebreakskip = 0pt plus 2pt
 \fi
 
-\ifmono
-    \setmainfont[
-        ItalicFont={Liberation Mono},
-        BoldItalicFont={Liberation Mono Bold}
-    ]{Liberation Mono}
-    \setmonofont{Liberation Mono}
-\else
-    \setmonofont{Liberation Mono}
-\fi
+% \ifmono
+%     \setmainfont[
+%         ItalicFont={Liberation Mono},
+%         BoldItalicFont={Liberation Mono Bold}
+%     ]{Liberation Mono}
+%     \setmonofont{Liberation Mono}
+% \else
+%     \setmonofont{Liberation Mono}
+% \fi
 
 
-\setlength{\topmargin}{0pt}
-\setlength{\headsep}{10pt}
-\setlength{\textheight}{780pt}
-\setlength{\footskip}{20pt}
-\setlength{\voffset}{-60pt}
-\setlength{\textwidth}{560pt}
-\setlength{\marginparsep}{0pt}
-\setlength{\marginparwidth}{0pt}
+% \setlength{\topmargin}{0pt}
+% \setlength{\headsep}{10pt}
+% \setlength{\textheight}{780pt}
+% \setlength{\footskip}{20pt}
+% \setlength{\voffset}{-60pt}
+% \setlength{\textwidth}{560pt}
+% \setlength{\marginparsep}{0pt}
+% \setlength{\marginparwidth}{0pt}
 \setlength{\marginparpush}{0pt}
-\setlength{\oddsidemargin}{0pt}
-\setlength{\evensidemargin}{0pt}
-\setlength{\hoffset}{-53pt}
+
+% \setlength{\oddsidemargin}{0pt}
+% \setlength{\evensidemargin}{0pt}
+% \setlength{\hoffset}{-53pt}
+
+
+
 \setlength{\columnsep}{15pt}
 \setlength{\columnseprule}{0pt}
 \setlength{\parskip}{2.4pt}
@@ -90,18 +94,30 @@
 }
 
 
+% \setminted{
+%     breaklines=false,
+%     fontsize=\fontsize{7.2pt}{8.5pt}\selectfont,
+%     frame=single,
+%     numbers=left,
+%     numbersep=2pt,
+%     mathescape=true,
+%     rulecolor=mygray,
+%     stepnumber=2,
+%     stepnumberfromfirst,
+%     tabsize=2
+% }
+
 \setminted{
-    breaklines=false,
-    fontsize=\fontsize{7.2pt}{8.5pt}\selectfont,
+    breaklines=true,
+    fontsize=\fontsize{12pt}{12pt}\selectfont,
     frame=single,
     numbers=left,
-    numbersep=2pt,
+    numbersep=4pt,
     mathescape=true,
     rulecolor=mygray,
-    stepnumber=2,
-    stepnumberfromfirst,
     tabsize=2
 }
+
 
 \renewcommand{\theFancyVerbLine}{%
 \textcolor{mygray}{\scriptsize{\arabic{FancyVerbLine}}}}
@@ -133,7 +149,7 @@
 \fancyhead[R]{\bfseries\small Page \thepage}
 \fancyfoot[C]{{
     \footnotesize\ttfamily
-    https://github.com/toxicpie/nacl
+    % https://github.com/toxicpie/nacl
 }}
 
 \newcommand\requires[1]{%

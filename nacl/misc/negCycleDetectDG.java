@@ -1,5 +1,3 @@
-import java.io.*;
-import java.util.*;
 public class negCycleDetectDG {
   public static void main(String[] args) throws IOException { }
   static void solve() {
@@ -25,8 +23,7 @@ public class negCycleDetectDG {
     if (startNode == -1) {
       out.println("NO");
       return;
-    }
-    // To ensure we are inside the cycle
+    } // To ensure we are inside the cycle
     for (int i = 0; i < n; i++) {
       startNode = parent[startNode];
     }

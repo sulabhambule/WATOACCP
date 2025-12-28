@@ -1,10 +1,6 @@
-import java.io.*;
-import java.util.*;
-/*
- * parent[node][i] = parent[parent[node][i - 1]][i - 1];
- * This means that the 2^i th parent of the node is
- *  2^i - 1 th parent of the node ka 2^i-1 th parent
- */
+// parent[node][i] = parent[parent[node][i - 1]][i - 1];
+// This means that the 2^i th parent of the node is
+// 2i - 1 th parent of the node ka 2^i-1 th parent
 public class BinaryLiftting {
   private static final int MAX_LOG = 20;
   private static void solve() {

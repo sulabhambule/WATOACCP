@@ -28,7 +28,6 @@ public class SlidingWindow {
     }
     return ans;
   }
-
   // code to find the sliding window maximum of size k.
   public int[] maxSlidingWindow(int[] nums, int k) {
     int n = nums.length;
@@ -49,9 +48,7 @@ public class SlidingWindow {
       }
     }
     return ans;
-  }
-  // max num is sliding window of size k. 
-
+  }  // max num is sliding window of size k. 
   public int[] maxSlidingWindow2(int[] nums, int k) {
     int n = nums.length;
     int[] ans = new int[n - k + 1];
@@ -65,13 +62,11 @@ public class SlidingWindow {
         deque.pollLast();
       }
       deque.offerLast(i);
-      if (i >= k - 1) {
+      if (i >= k - 1)
         ans[idx++] = nums[deque.getFirst()];
-      }
     }
     return ans;
-  }
-  // Function to find the sliding window Meadian.
+  } // Function to find the sliding window Meadian.
   public double[] medianSlidingWindow(int[] nums, int k) {
     TreeSet<Integer> minSet = new TreeSet<>(
         (a, b) -> nums[a] == nums[b] ? a - b
@@ -81,22 +76,19 @@ public class SlidingWindow {
             : Integer.compare(nums[a], nums[b]));
 
     double[] ans = new double[nums.length - k + 1];
-
     for (int i = 0; i < nums.length; i++) {
       minSet.add(i); // add the index in the low
       maxSet.add(minSet.pollLast()); 
       // add the last of minSet to max.
-      if (minSet.size() < maxSet.size()) {
+      if (minSet.size() < maxSet.size())
         // if low < high add the first from the high to the low set.
         minSet.add(maxSet.pollFirst());
-      }
       if (i >= k - 1) {
-        if (k % 2 == 0) {
+        if (k % 2 == 0)
           ans[i - k + 1] = ((double) nums[minSet.last()]
               + nums[maxSet.first()]) / 2;
-        } else {
+        else 
           ans[i - k + 1] = (double) nums[minSet.last()];
-        }
         if (!minSet.remove(i - k + 1)) 
           maxSet.remove(i - k + 1);
       }

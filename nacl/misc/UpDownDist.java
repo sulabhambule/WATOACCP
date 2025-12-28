@@ -1,5 +1,3 @@
-import java.io.*;
-import java.util.*;
 // here we are finding the max dist in subTree in down1[node] 
 // and second max leaf dist in down2[node], also the up[node]
 //= max dist not in the subTree. and the heavy[node] give in
@@ -54,7 +52,6 @@ public class UpDownDist {
       }
     }
   }
-
   static void dfsDepth(int node, int p) {
     parent[node] = p;
     for (int adjNode : adj.get(node)) {

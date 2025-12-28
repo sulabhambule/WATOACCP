@@ -34,7 +34,6 @@ public class Main {
         return 0;
       return (fact[n] * invFact[n - k]) % MOD;
     }
-
     long factorial(int n) {
       return fact[n];
     }

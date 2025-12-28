@@ -1,5 +1,3 @@
-import java.io.*;
-import java.util.*;
 public class TreeDiameter {
     public static void main(String[] args) {
         solve();// out.close();
@@ -33,24 +31,21 @@ public class TreeDiameter {
         System.out.println(distY[z]);
     }
     private static void dfs(int curr, List<List<Integer>> edges, int parent, int[] level) {
-        if (parent == -1) {
+        if (parent == -1)
             level[curr] = 0;
-        } else {
+        else 
             level[curr] = level[parent] + 1;
-        }
         for (int neighbor : edges.get(curr)) {
-            if (neighbor != parent) {
+            if (neighbor != parent)
                 dfs(neighbor, edges, curr, level);
-            }
         }
     }
     // Find the farthest node from a given node
     private static int farthestNode(int n, int[] dist) {
         int farthest = 0;
         for (int i = 0; i <= n; i++) {
-            if (dist[i] > dist[farthest]) {
+            if (dist[i] > dist[farthest])
                 farthest = i;
-            }
         }
         return farthest;
     }
